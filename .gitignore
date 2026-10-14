@@ -1,0 +1,19 @@
+# Ambiente virtual
+.venv/
+
+# Dados de execução (logs, lock de instância única)
+var/
+
+# Configuração local do usuário
+config/*.local.toml
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Ferramentas
+.pytest_cache/
+.ruff_cache/

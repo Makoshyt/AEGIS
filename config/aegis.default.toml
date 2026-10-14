@@ -1,0 +1,47 @@
+# Configuração padrão do AEGIS (versionada).
+# Para personalizar, crie config/aegis.local.toml contendo apenas as chaves que deseja alterar.
+
+[general]
+name = "AEGIS"
+language = "pt-BR"
+
+[logging]
+level = "INFO"
+# Relativo à pasta do projeto; não pode apontar para fora dela.
+directory = "var/logs"
+file_name = "aegis.log"
+max_bytes = 1000000
+backup_count = 5
+# Quando true, o texto digitado/falado é registrado no log (ainda com mascaramento de dados sensíveis).
+log_command_text = false
+
+[ui]
+start_hidden = false
+close_to_tray = true
+history_limit = 500
+
+[hotkey]
+enabled = true
+sequence = "Ctrl+Alt+A"
+
+# Recursos de fases futuras: permanecem desativados nesta fase.
+[voice]
+enabled = false
+voice_name = "Maria"
+language = "pt-BR"
+
+[llm]
+enabled = false
+provider = "ollama"
+model = "qwen2.5:7b"
+endpoint = "http://127.0.0.1:11434"
+
+# Aplicativos que a habilidade "abrir" pode iniciar.
+# Somente caminhos absolutos locais para .exe, sem argumentos. Pedidos fora desta lista são recusados.
+[apps.bloco]
+label = "Bloco de Notas"
+path = 'C:\Windows\System32\notepad.exe'
+
+[apps.calculadora]
+label = "Calculadora"
+path = 'C:\Windows\System32\calc.exe'
